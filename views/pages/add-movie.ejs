@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('../partials/head'); %>
+	</head>
+	<body class="container">
+		<header><%- include('../partials/header'); %></header>
+
+		<main>
+			<form method="POST" action="/api/v1/movies">
+				<div class="form-group">
+					<label for="title">Title</label>
+					<input
+						type="text"
+						class="form-control"
+						id="title"
+						placeholder="Mrs. Doubtfire"
+						name="movieTitle"
+					/>
+				</div>
+				<div class="form-group">
+					<label for="year">Year</label>
+					<input
+						type="text"
+						class="form-control"
+						id="year"
+						placeholder="1993"
+						name="movieYear"
+					/>
+				</div>
+				<div class="form-group">
+					<label for="category">Category</label>
+					<input
+						type="text"
+						class="form-control"
+						id="category"
+						placeholder="Movie"
+						name="movieCategory"
+					/>
+				</div>
+				<div class="form-group">
+					<label for="rating">Rating</label>
+					<input
+						type="text"
+						class="form-control"
+						id="rating"
+						placeholder="PG"
+						name="movieRating"
+					/>
+				</div>
+				<button type="submit" class="btn btn-primary mb-2">Submit</button>
+			</form>
+		</main>
+
+		<footer><%- include('../partials/footer'); %></footer>
+	</body>
+</html>

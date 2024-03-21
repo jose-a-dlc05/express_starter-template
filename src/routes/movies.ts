@@ -10,6 +10,6 @@ import {
 const router = Router();
 
 router.route('/').get(getAllMovies).post(createMovie);
-router.route('/:id').get(getMovie).put(updateMovie).delete(deleteMovie);
+router.route('/:id').get(getMovie).patch(updateMovie).delete(deleteMovie);
 
 export default router;

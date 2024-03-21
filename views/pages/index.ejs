@@ -16,6 +16,7 @@
 							<th>Year</th>
 							<th>Category</th>
 							<th>Rating</th>
+							<th></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -25,6 +26,11 @@
 							<td><%= movie.year %></td>
 							<td><%= movie.category %></td>
 							<td><%= movie.rating %></td>
+							<td>
+								<button type="button" class="btn btn-warning mb-2">
+									<a href="/api/v1/movies/<%= movie.id %>">Edit</a>
+								</button>
+							</td>
 						</tr>
 						<% }) %>
 					</tbody>
