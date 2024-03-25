@@ -66,9 +66,7 @@ export const createMovie = (req: any, res: any, next: any) => {
 
 		movies.push(movieData);
 		saveUserData(movies);
-		res.status(200).render('pages/index', {
-			movies: getUserData(),
-		});
+		res.redirect('/');
 	} catch (err) {
 		next(err);
 	}
@@ -96,10 +94,8 @@ export const updateMovie = (req: any, res: any, next: any) => {
 			rating: movieRating,
 		});
 		//finally save it
-		res.status(200).render('pages/index', {
-			movies: getUserData(),
-		});
 		saveUserData(updatedMovies);
+		res.redirect('/');
 	} catch (err) {
 		next(err);
 	}
@@ -116,9 +112,7 @@ export const deleteMovie = (req: any, res: any, next: any) => {
 
 		const updatedMovies = movies.filter((movie) => movie.id !== foundMovie?.id);
 		saveUserData(updatedMovies);
-		res.status(200).render('pages/index', {
-			movies: updatedMovies,
-		});
+		res.redirect('/');
 	} catch (err) {
 		next(err);
 	}

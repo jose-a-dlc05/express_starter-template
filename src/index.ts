@@ -7,6 +7,7 @@ import movies from './routes/movies';
 import morgan from 'morgan';
 import { errorHandler } from './middleware/error';
 import { getUserData } from './utils/generalUtils';
+import path from 'path';
 // This is the point of entry
 const app: Express = express();
 
@@ -27,6 +28,7 @@ app.get('/add-movie', (req, res) => res.render('pages/add-movie'));
 
 app.use('/api/v1/movies', movies);
 
+// app.use(express.static(path.join(__dirname, '../public')));
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 8000;
